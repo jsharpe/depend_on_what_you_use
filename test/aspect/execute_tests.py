@@ -288,6 +288,14 @@ TESTS = [
         ),
         expected=ExpectedResult(success=True),
     ),
+    TestCase(
+        name="include_path_from_define",
+        cmd=TestCmd(
+            target="//test/aspect/defines:include_path_from_define",
+            aspect=DEFAULT_ASPECT,
+        ),
+        expected=ExpectedResult(success=True),
+    ),
 ]
 
 if __name__ == "__main__":

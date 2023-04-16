@@ -21,3 +21,13 @@ cc_library(
         "//test/aspect/defines/support:transitive_define",
     ],
 )
+
+cc_library(
+    name = "include_path_from_define",
+    srcs = ["include_path_from_define.cpp"],
+    copts = ['-DHEADER_PATH_B=\\"test/aspect/defines/lib/b.h\\"'],
+    deps = [
+        "//test/aspect/defines/lib:a",
+        "//test/aspect/defines/lib:b",
+    ],
+)

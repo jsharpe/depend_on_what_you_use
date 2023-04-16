@@ -78,6 +78,10 @@ def get_includes_from_file(file: Path, defines: List[str]) -> List[Include]:
         output_sink = StringIO()
         pre_processor.write(output_sink)
 
+        print("------------")
+        print(output_sink.getvalue())
+        print("------------")
+
         return [
             Include(file=file, include=include)
             for include in re.findall(r'^\s*#include\s*["<](.+)[">]', output_sink.getvalue(), re.MULTILINE)
